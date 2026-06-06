@@ -8,7 +8,7 @@
 			$.ajax({
 				url:'./ajax/buscar_categorias.php?action=ajax&page='+page+'&q='+q,
 				 beforeSend: function(objeto){
-				 $('#loader').html('<img src="./img/ajax-loader.gif"> Cargando...');
+				 $('#loader').html('<img src="./img/ajax-loader.gif"> Cargando categorias...');
 			  },
 				success:function(data){
 					$(".outer_div").html(data).fadeIn('slow');
@@ -29,7 +29,7 @@
         url: "./ajax/buscar_categorias.php",
         data: "id="+id,"q":q,
 		 beforeSend: function(objeto){
-			$("#resultados").html("Mensaje: Cargando...");
+			$("#resultados").html("Mensaje: Eliminando categoria...");
 		  },
         success: function(datos){
 		$("#resultados").html(datos);
@@ -50,7 +50,7 @@ $( "#guardar_categoria" ).submit(function( event ) {
 			url: "ajax/nueva_categoria.php",
 			data: parametros,
 			 beforeSend: function(objeto){
-				$("#resultados_ajax").html("Mensaje: Cargando...");
+				$("#resultados_ajax").html("Mensaje: Creando categoria...");
 			  },
 			success: function(datos){
 			$("#resultados_ajax").html(datos);
@@ -70,7 +70,7 @@ $( "#editar_categoria" ).submit(function( event ) {
 			url: "ajax/editar_categoria.php",
 			data: parametros,
 			 beforeSend: function(objeto){
-				$("#resultados_ajax2").html("Mensaje: Cargando...");
+				$("#resultados_ajax2").html("Mensaje: Editando categoria...");
 			  },
 			success: function(datos){
 			$("#resultados_ajax2").html(datos);
