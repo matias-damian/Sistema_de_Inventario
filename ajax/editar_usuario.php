@@ -14,8 +14,8 @@ if (version_compare(PHP_VERSION, '5.3.7', '<')) {
 			$errors[] = "Apellidos vacíos";
 		}  elseif (empty($_POST['user_name2'])) {
             $errors[] = "Nombre de usuario vacío";
-        }  elseif (strlen($_POST['user_name2']) > 64 || strlen($_POST['user_name2']) < 2) {
-            $errors[] = "Nombre de usuario no puede ser inferior a 2 o más de 64 caracteres";
+        }  elseif (strlen($_POST['user_name2']) > 64 || strlen($_POST['user_name2']) < 3) {
+            $errors[] = "Nombre de usuario no puede ser inferior a 3 o más de 64 caracteres";
         } elseif (!preg_match('/^[a-z\d]{2,64}$/i', $_POST['user_name2'])) {
             $errors[] = "Nombre de usuario no encaja en el esquema de nombre: Sólo aZ y los números están permitidos , de 2 a 64 caracteres";
         } elseif (empty($_POST['user_email2'])) {
@@ -29,7 +29,7 @@ if (version_compare(PHP_VERSION, '5.3.7', '<')) {
 			&& !empty($_POST['firstname2'])
 			&& !empty($_POST['lastname2'])
             && strlen($_POST['user_name2']) <= 64
-            && strlen($_POST['user_name2']) >= 2
+            && strlen($_POST['user_name2']) >= 3
             && preg_match('/^[a-z\d]{2,64}$/i', $_POST['user_name2'])
             && !empty($_POST['user_email2'])
             && strlen($_POST['user_email2']) <= 64
